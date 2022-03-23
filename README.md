@@ -1,2 +1,0 @@
-# Verilog-PTS
-Verilog Exercises
