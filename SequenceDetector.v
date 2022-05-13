@@ -1,4 +1,5 @@
-module SequenceDetector(x,clk,rst,y); // the sequence is 1011 with overlapping
+// the sequence is 1011 with overlapping
+module SequenceDetector(x,clk,rst,y); 
 input x,clk,rst;
 output reg y; //FSM Technique
 parameter s0=3'b000,s1=3'b001,s2=3'b011,s3=3'b010,s4=3'b110; // this is the states
@@ -11,7 +12,7 @@ else
 current_state<=next_state;
 end
 /******************************************/
-always @(posedge clk or x) begin //at the change of input or clock
+always @(current_state or x) begin //at the change of input or clock
 case (current_state)
 s0 :
 if(x)
